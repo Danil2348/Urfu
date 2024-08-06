@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using Urfu.Service;
 namespace Urfu.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class EducationalProgramModuleController : ControllerBase // контроллер привязки модуля с ОП
     {

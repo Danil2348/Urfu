@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using Urfu.Service;
 namespace Urfu.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class EducationalProgramController : ControllerBase // контроллер ОП
     { 
@@ -20,8 +22,9 @@ namespace Urfu.Controllers
         {
             _educationalProgramService = educationalProgramService;
         }
-
+        
         [HttpGet]
+        
         public IActionResult GetEducationPrograms() // метод реализующий запрос на получение списка ОП
         {
             var educationalPrograms = _educationalProgramService.GetEducationPrograms(); // получение списка ОП

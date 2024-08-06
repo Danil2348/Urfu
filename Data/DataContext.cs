@@ -13,7 +13,7 @@ namespace Urfu.Data
         {
             Database.EnsureCreated(); // создаем базу данных при первом обращении
         }
-
+        public DbSet<User> Users { get; set; } // // сопоставление колекции пользователей с таблицей пользователей
         public DbSet<EducationalProgram> EducationalPrograms { get; set; } // сопоставление колекции ОП с таблицей ОП
         public DbSet<EducationProgramModule> EducationProgramModules { get; set; } // сопоставление колекции привязки модуля с ОП с таблицей привязок модулей с ОП
         public DbSet<Head> Heads { get; set; } // сопоставление колекции ответственных лиц с таблицей ответсвенных лиц

@@ -33,6 +33,10 @@ namespace Urfu.Data
                     new Head{ fullname="Второй"},
                     new Head{ fullname="Третий"}
                 };
+                List<User> users = new List<User>() // список пользователей
+                {
+                    new User{ Username = "admin", Password = "admin" }
+                };
                 List<EducationProgramModule> educationProgramModules = new List<EducationProgramModule>() // список привязок модулей с ОП
                 {
                     new EducationProgramModule
@@ -56,6 +60,7 @@ namespace Urfu.Data
                 };
                 _context.Institutes.AddRange(institutes); // добавление списка интситутов
                 _context.Heads.AddRange(heads); // добавление списка ответсвенных лиц
+                _context.Users.AddRange(users); // добавление пользователей
                 _context.EducationProgramModules.AddRange(educationProgramModules); // добавление списка привязок модулей с ОП
                 _context.SaveChanges(); // сохранение данных
             }
